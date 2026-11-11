@@ -20,21 +20,21 @@ jobs:
 
       - name: Run and Verify output
         run: >
-          OUTPUT=$(python3 main.py "pearse mccarthy" "0831122334");
+          OUTPUT=$(python3 validate-data.py "pearse mccarthy" "0831122334");
           if [ "$OUTPUT" = "PASS" ];
           then 
             echo -e "Test Result: PASSED";
           else 
             echo -e "Test Result: FAILED"; 
           fi; 
-          OUTPUT=$(python3 main.py "pearse mccarthy" "08311223344");
+          OUTPUT=$(python3 validate-data.py "pearse mccarthy" "08311223344");
           if [ "$OUTPUT" = "PASS" ];
           then 
             echo -e "Test Result: PASSED";
           else 
             echo -e "Test Result: FAILED"; 
           fi; 
-          OUTPUT=$(python3 main.py "pearseT mccarthy" "0831122334");
+          OUTPUT=$(python3 validate-data.py "pearseT mccarthy" "0831122334");
           if [ "$OUTPUT" = "PASS" ];
           then 
             echo -e "Test Result: PASSED";
