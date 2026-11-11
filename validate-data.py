@@ -6,7 +6,7 @@ def main():
         return 
 
     name, number = sys.argv[1], sys.argv[2]
-    if len(name) <= 15 and len(number) <= 10:
+    if len(name) <= 20 and len(number) <= 10:
         print("PASS")
     else:
         print("FAIL")
