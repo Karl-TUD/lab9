@@ -1,0 +1,43 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  lab9-basic-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python
+        # This is the version of the action for setting up Python, not the Python version.
+        uses: actions/setup-python@v5
+        with:
+          # Semantic version range syntax or exact version of a Python version
+          python-version: '3.14.6'
+
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+
+      - name: Run and Verify output
+        run: >
+          OUTPUT=$(python3 main.py "pearse mccarthy" "0831122334");
+          if [ "$OUTPUT" = "PASS" ];
+          then 
+            echo -e "Test Result: PASSED";
+          else 
+            echo -e "Test Result: FAILED"; 
+          fi; 
+          OUTPUT=$(python3 main.py "pearse mccarthy" "08311223344");
+          if [ "$OUTPUT" = "PASS" ];
+          then 
+            echo -e "Test Result: PASSED";
+          else 
+            echo -e "Test Result: FAILED"; 
+          fi; 
+          OUTPUT=$(python3 main.py "pearseT mccarthy" "0831122334");
+          if [ "$OUTPUT" = "PASS" ];
+          then 
+            echo -e "Test Result: PASSED";
+          else 
+            echo -e "Test Result: FAILED"; 
+          fi; 
