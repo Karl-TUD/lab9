@@ -1,0 +1,38 @@
+  507  gh repo create lab9 --public
+  508  ls
+  509  git clone git@github.com:Karl-TUD/lab9
+  510  cd lab9
+  517  gh issue create --label EPIC --title "Do Lab9" --assignee "@me"
+  518  gh issue create --label enhancement --title "Create Validate-Data script" --assignee "@me"
+  519  python3
+  520  nano validate-data.py
+  524  cat validate-data.py 
+  525  gh issue create --label enhancement --title "Create yaml test script" --assignee "@me"
+  530  mkdir .github
+  532  mkdir .github/workflows
+  533  cd .github/workflows
+  534  nano basictests.yml
+  544  cat basictests.yml
+  549  git status
+  550  git add .
+  551  git commit -m "Initial Commit"
+  552  git push -u origin main
+  553  cd .github
+  554  cd workflows
+  555  ls
+  556  nano basictests.yml
+  557  git status
+  558  git add basictests.yml 
+  559  git commit -m "Fixed typo in yml file"
+  560  git push
+  561  cd ../../
+  562  gh issue create --label enhancement --title "Create project view for repo" --assignee "@me"
+  563  gh issue create --label enhancement --title "Make Test Branch" --assignee "@me"
+  564  git checkout -b test
+  566  nano validate-data.py 
+  567  cat validate-data.py 
+  568  git status
+  569  git add validate-data.py 
+  570  git commit -m "Increased max name length to 20. Closes #5"
+  571  git push -u origin test
+  572  history > history.txt
